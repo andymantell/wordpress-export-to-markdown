@@ -69,6 +69,13 @@ const options = [
 		type: 'boolean',
 		description: 'Save images scraped from post body content',
 		default: true
+	},
+	{
+		name: 'post-author-frontmatter',
+		aliases: ['postauthorfrontmatter'],
+		type: 'boolean',
+		description: 'Save post author to frontmatter',
+		default: false
 	}
 ];
 

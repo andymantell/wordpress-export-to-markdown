@@ -48,7 +48,8 @@ function collectPosts(data, config) {
 			},
 			frontmatter: {
 				title: getPostTitle(post),
-				date: getPostDate(post)
+				date: getPostDate(post),
+				...(config.postAuthorFrontmatter && getPostAuthor(post)),
 			},
 			content: translator.getPostContent(post, turndownService, config)
 		}));
@@ -81,6 +82,12 @@ function getPostTitle(post) {
 
 function getPostDate(post) {
 	return luxon.DateTime.fromRFC2822(post.pubDate[0], { zone: 'utc' }).toISODate();
+}
+
+function getPostAuthor(post) {
+	return {
+		author: post.creator[0]
+	};
 }
 
 function collectAttachedImages(data) {

@@ -9,6 +9,7 @@ Each post is saved as a separate Markdown file with appropriate frontmatter. Ima
 ## Quick Start
 
 You'll need:
+
 - [Node.js](https://nodejs.org/) v12.14 or later
 - Your [WordPress export file](https://wordpress.org/support/article/tools-export-screen/)
 
@@ -154,3 +155,11 @@ Whether or not to download and save images attached to posts. Generally speaking
 - Default: `true`
 
 Whether or not to download and save images scraped from &lt;img&gt; tags in post body content. Images are saved into `/images`. The &lt;img&gt; tags are updated to point to where the images are saved.
+
+### Save post author slug to front matter?
+
+- Argument: `--post-author-frontmatter`
+- Type: `boolean`
+- Default: `false`
+
+Whether or not to add the post author's slug to the markdown frontmatter.
